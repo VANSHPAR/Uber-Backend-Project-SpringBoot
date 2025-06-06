@@ -22,8 +22,6 @@ public class ReviewService implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("**************");
         Review r=Review.builder()
-                .createdAt(new Date())
-                .updatedAt(new Date())
                 .content("Amazing service!!!!!!").rating(11.5).build();
         System.out.println(r);
         reviewRepository.save(r);//executes sql query
