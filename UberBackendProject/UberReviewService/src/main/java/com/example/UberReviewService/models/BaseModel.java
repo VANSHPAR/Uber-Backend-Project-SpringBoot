@@ -14,7 +14,7 @@ import java.util.Date;
 @Setter
 public abstract class BaseModel {  //this class have those properties which properties every class has
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE) //Identity means auto_increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Identity means auto_increment
     protected Long id;
 
     @Column(nullable = false)

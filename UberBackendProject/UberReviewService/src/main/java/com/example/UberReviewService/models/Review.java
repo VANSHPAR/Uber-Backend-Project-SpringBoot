@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
 
 @Entity
-@Table(name="Bookingreview")
+@Table(name="Booking_review")
 
 @Builder
 @NoArgsConstructor
