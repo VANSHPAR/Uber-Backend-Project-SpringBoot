@@ -53,11 +53,27 @@ public class ReviewService implements CommandLineRunner {
 //        if(b.isPresent()){
 //            bookingRepository.delete(b.get());
 //        }
-       Optional<Driver> driver=driverRepository.findByIdAndLicenseNumber(1L,"Gj061234");
-       if(driver.isPresent()){
-           System.out.println(driver.get().getName() );
-       }
+//       Optional<Driver> driver=driverRepository.findById(1L);
+//
+//       if(driver.isPresent()){
+//           System.out.println(driver.get().getName() );
+//
+//           List<Booking> b=driver.get().getBookings();
+//               for(Booking booking:b){
+//               System.out.println(booking.getId());
+//               }
+//           List<Booking> b=bookingRepository.findAllByDriverId(1L);
+//           for(Booking booking:b){
+//               System.out.println(booking.getBookingStatus());
+//           }
+//       }
+    //   Optional<Booking> b=bookingRepository.findById(1L);
+
 
     //    reviewRepository.deleteById(3L);
+//    Optional<Driver> d=driverRepository.rawfindByIdAndLicenseNumber(1L,"Gj061234");
+//        System.out.println(d.get().getName());
+        Optional<Driver> d=driverRepository.hqlFindByIdAndLicense(1L,"Gj061234");
+        System.out.println(d.get().getName());
     }
 }

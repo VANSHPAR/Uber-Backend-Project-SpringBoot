@@ -2,6 +2,7 @@ package com.example.UberReviewService.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.*;
 
@@ -22,7 +23,8 @@ public class Driver extends BaseModel {
     private String licenseNumber;
 
     //driver has many Bookings
-    @OneToMany(mappedBy = "driver")
+    @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY)// in Eager fetching all tables related to driver are joined tohether.
+    //// Lazy fetcher is default
     private List<Booking> bookings=new ArrayList<>();
 
 
