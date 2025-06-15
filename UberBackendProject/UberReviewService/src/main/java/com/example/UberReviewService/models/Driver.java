@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Driver extends BaseModel {
 
     private  String name;
@@ -26,8 +26,10 @@ public class Driver extends BaseModel {
     @Column(nullable = false, unique = true)
     private String licenseNumber;
 
+    private String phoneNumber;
+
     //driver has many Bookings
-    @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY)// in Eager fetching all tables related to driver are joined tohether.
+    @OneToMany(mappedBy = "driver")// in Eager fetching all tables related to driver are joined tohether.
     //// Lazy fetcher is default
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Booking> bookings=new ArrayList<>();
